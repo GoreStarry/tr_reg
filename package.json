@@ -1,0 +1,15 @@
+{
+  "name": "tr_reg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/cypress run --headed --no-exit --spec 'cypress/integration/TR/**/**.spec.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.1.0"
+  },
+  "devDependencies": {}
+}
