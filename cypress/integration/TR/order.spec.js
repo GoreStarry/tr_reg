@@ -39,7 +39,7 @@ context("Actions", async () => {
 
     // 訂票張數:
     cy.get("#order_qty_str").select("3");
-    cy.wait(1000);
+    cy.wait(500);
     cy.get("form").submit();
 
     cy.get("#randInput").focus();
