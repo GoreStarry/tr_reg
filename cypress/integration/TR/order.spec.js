@@ -42,26 +42,31 @@ context("Actions", async () => {
     cy.wait(1000);
     cy.get("form").submit();
 
+    cy.get("#randInput").focus();
     //　等待輸入驗證碼...
+
     cy.contains("a", "406", {
       timeout: 30000,
     }).click();
 
+    cy.get("#randInput").focus();
     //　等待輸入驗證碼...
 
     cy.contains("訂票成功", {
       timeout: 30000,
     });
     cy.screenshot("order-success");
-    var orderCode;
-    cy.get("#spanOrderCode").then($span => {
-      orderCode = $span.text();
-    });
-    console.log(orderCode);
+    cy.wait(1000);
+    // var orderCode;
+    // cy.get("#spanOrderCode").then($span => {
+    //   orderCode = $span.text();
+    // });
+    // console.log(orderCode);
 
     cy.get(".form-group").then($body => {
       if ($body.text().includes("同一車廂")) {
         cy.screenshot("perfect-success");
+        alert("成功訂到同一車廂啦!!");
       } else {
         cy.contains("取消此車次訂票").click();
         // cy.visit("http://railway.hinet.net/Foreign/TW/ecancel.html");
