@@ -14,17 +14,17 @@ context("Actions", async () => {
       .should("have.value", userId);
 
     // 選擇乘車日期:
-    cy.get("#getin_date").select("2018/10/27【六】");
+    cy.get("#getin_date").select("2018/10/28【日】");
 
     // 起站代碼:
     cy.get("#from_station")
-      .select("100-台北")
-      .should("have.value", "100");
+      .select("051-花蓮")
+      .should("have.value", "051");
 
     // 到站代碼:
     cy.get("#to_station")
-      .select("051-花蓮")
-      .should("have.value", "051");
+      .select("100-台北")
+      .should("have.value", "100");
 
     // 車種:
     cy.get("#train_type")
@@ -32,10 +32,10 @@ context("Actions", async () => {
       .should("have.value", "*1");
 
     // 起始時間:
-    cy.get("#getin_start_dtime").select("05:00");
+    cy.get("#getin_start_dtime").select("1900:00");
 
     // 截止時間:
-    cy.get("#getin_end_dtime").select("11:00");
+    cy.get("#getin_end_dtime").select("10:00");
 
     // 訂票張數:
     cy.get("#order_qty_str").select("2");
@@ -44,8 +44,7 @@ context("Actions", async () => {
 
     cy.get("#randInput").focus();
     //　等待輸入驗證碼...
-    // 445
-    cy.contains("a", "202", {
+    cy.contains("a", "6247", {
       timeout: 30000,
     }).click();
 
@@ -77,13 +76,14 @@ context("Actions", async () => {
         //   .type(orderCode)
         //   .should("have.value", orderCode);
         // cy.get("form").submit();
-
-        cy.contains("取消此車次訂票").click();
-        cy.screenshot("cancel");
-        cy.contains("您的訂票紀錄如下");
-        cy.get("form").submit();
-        cy.contains("您訂的車票已取消");
-        cy.screenshot("cancel-success");
+        //
+        //
+        // cy.contains("取消此車次訂票").click();
+        // cy.screenshot("cancel");
+        // cy.contains("您的訂票紀錄如下");
+        // cy.get("form").submit();
+        // cy.contains("您訂的車票已取消");
+        // cy.screenshot("cancel-success");
       }
     });
   });

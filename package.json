@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/cypress run --headed --no-exit --spec 'cypress/integration/TR/**/**.spec.js'"
+    "start": "./node_modules/.bin/cypress run --headed --no-exit --spec 'cypress/integration/TR/order.spec.js'",
+    "back": "./node_modules/.bin/cypress run --headed --no-exit --spec 'cypress/integration/TR/order_back.spec.js'"
   },
   "author": "",
   "license": "ISC",
